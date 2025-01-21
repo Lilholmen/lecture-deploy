@@ -13,10 +13,10 @@ function UncontrolledForm() {
     e.preventDefault()
 
     const formData = new FormData(e.currentTarget)
-
+    setError('')
     console.log(formData.get('text'))
     console.log(formData.get('agreement'))
-    localStorage.setItem('user name', formData.get('text') ?? '')
+    localStorage.setItem('user name', (formData.get('text') as string) ?? '')
     //if (inputRef.current?.value === 'error') setError('wrong name')
     //console.log(inputRef.current?.value)
   }
